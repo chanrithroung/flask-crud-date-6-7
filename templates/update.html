@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %} Create User {% endblock  %}
+
+{% block content %} 
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-sm-12 col-md-12 col-lg-6 col-xxl-4 mt-5 shadow-lg bg-white p-4 rounded-3">
+                <h3>Update User</h3>
+                <form action="{{ url_for('update_submit') }}" method="post">
+                    <div class="mb-2">
+                        <input name="id" value="{{ user[0] }}" type="hidden">
+                        <label for="firstname">First Name</label>
+                        <input value="{{ user[1] }}" name="first-name" class="form-control" placeholder="Frist name" required id="firstname" type="text">
+                    </div>
+                    <div class="mb-2">
+                        <label for="lastname">Last Name</label>
+                        <input value="{{ user[2] }}"  name="last-name" class="form-control" placeholder="Last Name" required id="lastname" type="text">
+                    </div>
+                    <div class="mb-2">
+                        <label for="email">Email Address</label>
+                        <input value="{{ user[3] }}"  name="email" class="form-control" placeholder="Email" required id="email" type="email">
+                    </div>
+        
+                    <div class="d-grid mt-3">
+                        <button type="submit" class="btn btn-primary">Update User</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
